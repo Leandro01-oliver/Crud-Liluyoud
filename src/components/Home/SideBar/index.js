@@ -10,6 +10,7 @@ const SideBar = () => {
         <
         Flex w = { '70px' }
         minH = { '100vh' }
+        direction = { 'column' }
         bg = { '#fff' } >
         <
         Logo / >

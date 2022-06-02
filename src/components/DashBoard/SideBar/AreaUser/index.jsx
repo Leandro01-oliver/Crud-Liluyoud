@@ -1,5 +1,5 @@
 import React,{useContext} from 'react';
-import { ContextUser } from '../../../../../../../../context/contextUser';
+import { ContextUser } from '../../../../../context/contextUser';
 import { Flex, Avatar, Box } from '@chakra-ui/react'
 import {TbWorld} from 'react-icons/tb'
 

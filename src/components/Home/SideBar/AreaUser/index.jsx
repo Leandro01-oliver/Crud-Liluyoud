@@ -55,7 +55,8 @@ const AreaUser = () => {
                            </Flex>
                            <Box w={'2.5px'}  display={user ? 'block' : 'none'} h={'30px'} borderRadius={'40px'} bg={'#fff'}  mx={'.8rem'}></Box>
                           <a
-                            href='/profile'
+                             href='/dashboard/'
+                             target={'_blank'}
                           >
                             <Flex
                             w={'30px'}
@@ -95,7 +96,8 @@ const AreaUser = () => {
                                     </Flex>
                                     <Box w={'2.5px'}  display={user ? 'block' : 'none'} h={'30px'} borderRadius={'40px'} bg={'#fff'}  mx={'.8rem'}></Box>
                                     <a
-                                        href='/profile'
+                                        href='/dashboard/'
+                                        target={'_blank'}
                                     >
                                         <Flex
                                         w={'30px'}

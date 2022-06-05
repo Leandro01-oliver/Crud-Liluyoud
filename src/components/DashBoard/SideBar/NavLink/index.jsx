@@ -1,7 +1,6 @@
 import React,{useContext} from 'react';
 import { ContextUser } from '../../../../../context/contextUser'; 
 import { Flex, Box, Text } from '@chakra-ui/react'
-import {ImProfile} from 'react-icons/im'
 import {BsCardText} from 'react-icons/bs'
 
 
@@ -13,12 +12,6 @@ const  NavLink = () => {
     const links = [
         {
             id:0,
-            icon: <ImProfile/>,
-            name:'Perfil',
-            path:'/dashboard/perfil'
-        },
-        {
-            id:1,
             icon: <BsCardText/>,
             name:'Card',
             path:'/dashboard/card'

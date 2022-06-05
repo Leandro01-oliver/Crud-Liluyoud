@@ -1,27 +1,24 @@
-import React,{useContext} from 'react';
+import React,{useContext} from 'react'
+import { Flex, Text, SimpleGrid, Box } from '@chakra-ui/react';
 import { ContextUser } from '../../../../context/contextUser';
-import { Flex, SimpleGrid, Box, Text } from '@chakra-ui/react'
 
-const Content = () => {
-    
-  const { showMenu, cards, user } = useContext(ContextUser);
+const Card = () =>{
+
+    const { showMenu, cards, user } = useContext(ContextUser);
 
   return (
     <>
-     <Box 
-                bg={'blue'}
-                w={showMenu ? 'calc(100% - 250px)' : 'calc(100% - 70px)'}
-                minH={'100vh'}
-                p={'1rem'} 
-            >
-               <SimpleGrid
+      <Box
+      bg={'blue'}
+       w={showMenu ? 'calc(100% - 250px)' : 'calc(100% - 70px)'}
+      >
+       <SimpleGrid
            columns={{sm:'1',md:'2',lg:'4'}}
            gap={'10px'}
            display={'flex'}
            >
              {
                  cards?.map((c)=>{
-                   if(user.displayName == c.NickName)
                     return(
                       <>
                         <Flex
@@ -60,9 +57,9 @@ const Content = () => {
                  })
              }
            </SimpleGrid>
-            </Box> 
+      </Box>
     </>
   )
 }
 
-export default Content
+export default Card

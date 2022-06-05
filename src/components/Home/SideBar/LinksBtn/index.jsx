@@ -11,11 +11,13 @@ const LinkBtn = () => {
     const links = [{
             id: 0,
             icon: <AiOutlineHome/>,
+            link:'./',
             name: 'Home'
         },
         {
             id: 1,
             icon: <BsCardText/>,
+            link:'./card/',
             name: 'Cards'
         }
     ]
@@ -28,6 +30,7 @@ const LinkBtn = () => {
             links.map(l => {
                 return ( 
                     <>
+               <a href={l.link}>
                     <Flex 
                         key = { l.id } 
                         my={'.8rem'}
@@ -41,6 +44,7 @@ const LinkBtn = () => {
                         borderRadius = { '40px 0 0 40px' }
                         cursor={'pointer'}
                         align={'center'}
+                        title={l.name}
                     >
                         <Box
                          mx={'.8rem'}
@@ -54,6 +58,7 @@ const LinkBtn = () => {
                             { l.name }     
                         </Text> 
                     </Flex> 
+                    </a>
                     </>
                 )
             })

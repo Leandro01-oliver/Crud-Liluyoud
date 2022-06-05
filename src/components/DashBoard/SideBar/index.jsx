@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import { ContextUser } from '../../../../context/contextUser';
-import { Flex } from '@chakra-ui/react'
+import { Flex,Box } from '@chakra-ui/react'
 import Menu from '../../Home/SideBar/Menu';
 import AreaUser from './AreaUser'; 
 import NavLink from './NavLink';
@@ -18,7 +18,11 @@ const SideBar = () => {
             bg={'#fff'}
             py={'1rem'}
         >
+          <Box
+          mb={'.5rem'}
+          >
             <Menu/>
+          </Box>
             <AreaUser/>
             <NavLink/>
         </Flex>

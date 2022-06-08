@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import { Flex, Text, SimpleGrid, Box } from '@chakra-ui/react';
+import { Text, SimpleGrid, Box } from '@chakra-ui/react';
 import { ContextUser } from '../../../../context/contextUser';
 
 const Card = () =>{
@@ -15,15 +15,11 @@ const Card = () =>{
        <SimpleGrid
            columns={{sm:'1',md:'2',lg:'4'}}
            gap={'10px'}
-           display={'flex'}
            >
              {
                  cards?.map((c)=>{
                     return(
                       <>
-                        <Flex
-                        w={'100%'}
-                        >
                           <Box
                           key={c.id}
                           mx={'auto'}
@@ -35,11 +31,6 @@ const Card = () =>{
                           borderRadius={'10px'}
                           position={'relative'}
                           >
-                            <Box
-                            mb={'.5rem'}
-                            >
-                              Img
-                            </Box>
                             <Box>
                             <Text
                             mb={'.5rem'}
@@ -51,7 +42,6 @@ const Card = () =>{
                             </Text>
                             </Box>
                           </Box>
-                        </Flex>
                       </>
                     )
                  })

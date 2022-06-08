@@ -44,6 +44,8 @@ const ContextUserProvider = ({children})=>{
 
     const handlerCreate = () => setShowCreate(!showCreate);
 
+    const [search,setSearch] = useState('');
+
     const [name,setName] = useState('');
 
     const [sobreName,setsobreName] = useState('');
@@ -95,7 +97,9 @@ const ContextUserProvider = ({children})=>{
                     description,
                     setDescription,
                     cardId,
-                    setCardId
+                    setCardId,
+                    search,
+                    setSearch
                 };
 
 

@@ -47,9 +47,6 @@ const ModalEdite = () => {
             position:'relative'
          }}
          >
-             <Text>
-                 {cardId}
-             </Text>
              <Input
               onChange={(e)=>{setTitle(e.target.value)}}
              />

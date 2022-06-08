@@ -26,7 +26,9 @@ const CardUser = () => {
     description,
     setDescription,
     cardId,
-    setCardId
+    setCardId, 
+    search, 
+    setSearch
    } = useContext(ContextUser);
 
 cards.map(u=>{console.log(u)})
@@ -51,12 +53,13 @@ const handlerDelite = (id) =>{
             boxShadow={' 0 0 10px 0 rgba(0,0,0,0.1)'}
             borderRadius={'10px'}
           >
-            <Box
+            {/* <Box
                 display={showView ? 'block' : 'none'}
             >
               <Input
+              onChange={(e)=>setSearch(e.target.value)}
               />
-            </Box>
+            </Box> */}
             <Flex
             >
             <Flex
@@ -93,7 +96,7 @@ const handlerDelite = (id) =>{
            <SimpleGrid
            columns={{sm:'1',md:'2',lg:'4'}}
            gap={'10px'}
-           display={showView ? 'flex' : 'none'}
+           display={showView ? 'grid' : 'none'}
            >
              {
                  cards?.map((c)=>{
@@ -108,7 +111,7 @@ const handlerDelite = (id) =>{
                           mx={'auto'}
                           w={'100%'}
                           maxW={'300px'}
-                          p={'1rem'}
+                          p={'3rem 1rem 1rem 1rem '}
                           bg={'#fff'}
                           mt={'1rem'}
                           borderRadius={'10px'}
@@ -147,11 +150,6 @@ const handlerDelite = (id) =>{
                               <AiOutlineDelete/>
                               </Flex>
                             </Flex>
-                            <Box
-                              mb={'.5rem'}
-                            >
-                              Img
-                            </Box>
                             <Box>
                             <Text
                                mb={'.5rem'}

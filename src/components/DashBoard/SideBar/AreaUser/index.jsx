@@ -12,9 +12,9 @@ const AreaUser = () => {
        <Flex 
                 w = { showMenu ? '90%' : '62.5px' }
                 p = { '.5rem' }
-                borderRadius = { '40px 0 0 40px' }
+                borderRadius = {showMenu ? {sm:'40px',md:'40px 0 0 40px'} : '40px 0 0 40px' }
                 bg = { 'red' }
-                ml = { 'auto' }
+                m={showMenu ? {sm:'1rem auto 0 auto',md:'1rem 0 0 auto '} : '1rem 0 0 auto'}
                 mt={'.5rem'}
                 cursor = { 'pointer' }
                 color = { '#fff' } 

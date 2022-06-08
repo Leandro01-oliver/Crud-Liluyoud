@@ -12,11 +12,13 @@ const SideBar = () => {
   return (
     <>
         <Flex
-            w={showMenu ? '250px' : '70px'}
+            w={showMenu ? {sm:'100%',lg:'250px'} : '70px'}
             minH={'100vh'}
+            position={showMenu ? {sm:'absolute',md:'unset'} : 'unset'}
             direction={'column'}
             bg={'#fff'}
             py={'1rem'}
+            zIndex={'1000'}
         >
           <Box
           mb={'.5rem'}

@@ -33,13 +33,13 @@ const  NavLink = () => {
                         my={'.8rem'}
                         w={showMenu ? '80%' : '60px'}
                         bg={'red'}
-                        ml={'auto'}
                         p={'.5rem'}
                         py={'.8rem'}
                         color={'#fff'}
                         title={l.name}
                         justify={showMenu ? 'normal' : 'center'}
-                        borderRadius = { '40px 0 0 40px' }
+                        borderRadius = {showMenu ? {sm:'40px',md:'40px 0 0 40px'} : '40px 0 0 40px' }
+                        m={showMenu ? {sm:'1rem auto 0 auto',md:'1rem 0 0 auto '} : '1rem 0 0 auto'}
                         cursor={'pointer'}
                         align={'center'}
                     >

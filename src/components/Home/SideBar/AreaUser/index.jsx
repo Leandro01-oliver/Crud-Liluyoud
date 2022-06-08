@@ -13,17 +13,17 @@ const AreaUser = () => {
     return ( 
         <>
             <Flex 
-                w = { showMenu ? '90%' : '62.5px' }
-                p = { '.5rem' }
-                borderRadius = { '40px 0 0 40px' }
-                bg = { 'red' }
-                ml = { 'auto' }
-                mt={'.5rem'}
-                cursor = { 'pointer' }
-                color = { '#fff' } 
-                justify={showMenu ? 'space-between' : 'center'}
-                align={'center'}
-                position={'relative'}
+               w = { showMenu ? '90%' : '62.5px' }
+               p = { '.5rem' }
+               borderRadius = {showMenu ? {sm:'40px',md:'40px 0 0 40px'} : '40px 0 0 40px' }
+               bg = { 'red' }
+               m={showMenu ? {sm:'1rem auto 0 auto',md:'1rem 0 0 auto '} : '1rem 0 0 auto'}
+               mt={'.5rem'}
+               cursor = { 'pointer' }
+               color = { '#fff' } 
+               justify={showMenu ? 'space-between' : 'center'}
+               align={'center'}
+               position={'relative'}
                 >
                     <Avatar 
                      src={user?.photoURL}
@@ -31,23 +31,17 @@ const AreaUser = () => {
                      h={'40px'}
                      onClick={showMenu ?  null : handlerShow}
                     />    
-
-                        <Flex
+                    {
+                         showMenu ? 
+                            <Flex
+                              
                         display={'flex'}
                         bg={'red'}
                         py={'.5rem'}
+                        px={'1rem'}
                         borderRadius={'0 40px 40px 0'}
-                        align={'center'}
-                       >
-                           <Flex
-                                display={showUser ? 'flex' : 'none'}
-                                position={'absolute'}
-                                right={user ? '-7.5rem' : '-3.9rem'}
-                                bg={'red'}
-                                py={'.5rem'}
-                                borderRadius={'0 40px 40px 0'}
-                                >
-                                    <Flex
+                        >
+                             <Flex
                                     w={'30px'}
                                     h={'30px'}
                                     borderRadius={'50%'}
@@ -55,8 +49,48 @@ const AreaUser = () => {
                                     color={'red'}
                                     justify={'center'}
                                     align={'center'}
-                                    mr={user ? '0' : '1rem'}
-                                    ml={user ? '1rem' : '1rem'}
+                                    mX={'1rem'}
+                                    >
+                                        {user ? <GoSignOut onClick={closeUserPoup} /> : <GoSignIn onClick={openUserPoup} />}
+                                    </Flex>
+                                    <Box w={'2.5px'}  display={'block'} h={'30px'} borderRadius={'40px'} bg={'#fff'}  mx={'.8rem'}></Box>
+                                    <a
+                                        href='/dashboard/'
+                                        target={'_blank'}
+                                    >
+                                        <Flex
+                                        w={'30px'}
+                                        h={'30px'}
+                                        display={'flex'}
+                                        borderRadius={'50%'}
+                                        bg={'#fff'}
+                                        color={'red'}
+                                        justify={'center'}
+                                        align={'center'}
+                                        >
+                                            <MdOutlineSpaceDashboard/>
+                                        </Flex>
+                                    </a>
+                             </Flex> 
+                        :
+                       <Flex
+                       display={showUser ? 'flex' : 'none'}
+                       position={'absolute'}
+                       right={user ? '-7rem' : '-2.9rem'}
+                       bg={'red'}
+                       py={'.5rem'}
+                       borderRadius={'0 40px 40px 0'}
+                        >
+                                 <Flex
+                                    w={'30px'}
+                                    h={'30px'}
+                                    borderRadius={'50%'}
+                                    bg={'#fff'}
+                                    color={'red'}
+                                    justify={'center'}
+                                    align={'center'}
+                                    mr={user ? '0' : '.5rem'}
+                                    ml={user ? '.5rem' : '.5rem'}
                                     >
                                         {user ? <GoSignOut onClick={closeUserPoup} /> : <GoSignIn onClick={openUserPoup} />}
                                     </Flex>
@@ -79,10 +113,9 @@ const AreaUser = () => {
                                             <MdOutlineSpaceDashboard/>
                                         </Flex>
                                     </a>
-                    </Flex> 
-                    </Flex>
-            </Flex> 
-
+                             </Flex> 
+                    }
+           </Flex> 
         </>
     );
 }
